@@ -108,7 +108,7 @@ def filter_symbols(symbols):
     archs = ['ARM', 'ARM64', 'M68K', 'RISCV', 'SUPERH', 'X86', 'X86_32', 'XTENSA']
     return {sym
             for sym in symbols
-            if not sym.startswith('ARCH_') and not sym in archs
+            if not sym in archs
             and not sym.startswith('CPU_')}
 
 
