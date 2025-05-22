@@ -119,7 +119,7 @@ def extract_dependencies(symbol_block, if_blocks):
     if joined == '':
         return []
     deps = sorted(set(re.split(r'\s*(?:&&|\|\|)\s*', joined)))
-    deps = {sym.replace('(', '').replace(')', '') for sym in deps}
+    deps = {sym.replace('(', '').replace(')', '').replace(' ', '') for sym in deps}
     deps = {sym[:-2] if sym.endswith('=y') else sym
             for sym in deps
             if not sym.endswith('=n') and not sym.startswith('!')}
